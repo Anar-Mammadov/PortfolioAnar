@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Portfolio.WebUI.Model.DataContexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,22 @@ namespace Portfolio.WebUI.Controllers
 {
     public class BlogController : Controller
     {
+
+
+        readonly PortfolioDbContext db;
+        public BlogController(PortfolioDbContext db)
+        {
+            this.db = db;
+        }
         public IActionResult Index()
         {
-            return View();
+            var data = db.BlogPosts.Where(c => c.DeleteByUserId == null).ToList();
+            return View(data);
         }
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View();
+            var data = db.BlogPosts.FirstOrDefault(c => c.Id == id && c.DeleteByUserId == null);
+            return View(data);
         }
     }
 }
