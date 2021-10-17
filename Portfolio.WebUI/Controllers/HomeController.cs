@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Portfolio.WebUI.Model.DataContexts;
 using Portfolio.WebUI.Model.Entity;
+using Portfolio.WebUI.Model.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,14 @@ namespace Portfolio.WebUI.Controllers
         //+
         public IActionResult Index()
         {
-            return View();
+            var vm = new HomeViewModel();
+            vm.Services = db.Services.Where(e => e.DeleteByUserId == null).Include(e => e.Icons).ToList();
+            vm.Aboutme = db.Aboutme.FirstOrDefault(e => e.DeleteByUserId == null);
+
+           
+
+            return View(vm);
+            
         }
 
         public IActionResult Portfolio()

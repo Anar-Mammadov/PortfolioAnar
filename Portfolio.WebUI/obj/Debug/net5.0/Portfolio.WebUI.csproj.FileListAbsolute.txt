@@ -502,3 +502,4 @@ C:\Users\RADEO\Portofinoi\Portfolio.WebUI\obj\Debug\net5.0\Portfolio.WebUI.genru
 C:\Users\RADEO\Portofinoi\Portfolio.WebUI\bin\Debug\net5.0\libman.json
 C:\Users\RADEO\Portofinoi\Portfolio.WebUI\obj\Debug\net5.0\Razor\Views\Project\Details.cshtml.g.cs
 C:\Users\RADEO\Portofinoi\Portfolio.WebUI\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
+C:\Users\RADEO\Portofinoi\Portfolio.WebUI\obj\Debug\net5.0\Razor\Views\Shared\Components\PersonalDetails\Default.cshtml.g.cs
