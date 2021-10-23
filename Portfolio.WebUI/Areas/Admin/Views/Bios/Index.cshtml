@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Portfolio.WebUI.Model.Entity.Bio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+<table style="width:50%">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr  class="card-body">
+                @Html.Raw(item.Content)
+            </tr>
+            <tr>
+
+
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

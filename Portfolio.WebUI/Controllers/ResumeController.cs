@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.WebUI.Model.DataContexts;
 using Portfolio.WebUI.Model.ViewModels;
 using System;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace Portfolio.WebUI.Controllers
 {
+    [AllowAnonymous]
+
     public class ResumeController : Controller
     {
         readonly PortfolioDbContext db;

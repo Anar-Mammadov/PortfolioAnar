@@ -1,0 +1,50 @@
+﻿
+@model RegisterFormModel 
+
+<form class="login100-form validate-form p-b-33 p-t-5" method="post">
+    @if (!string.IsNullOrWhiteSpace(ViewBag.ms))
+    {
+<div class="form-group mb-3">
+    <div class="alert alert-danger text-primary">
+        @ViewBag.ms
+    </div>
+</div>}
+
+
+    <div class="wrap-input100 validate-input" data-validate="Enter username">
+        <input class="input100"
+               asp-for="Email"
+               placeholder="Email">
+        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+    </div>
+
+    <div class="wrap-input100 validate-input" data-validate="Enter username">
+        <input class="input100"
+               asp-for="UserName"
+               placeholder="UserName">
+        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate="Enter username">
+        <input class="input100"
+               asp-for="Password"
+               placeholder="Password">
+        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+    </div>
+
+
+
+    <div style="display:flex">
+        <div class="container-login100-form-btn m-t-32">
+            <a asp-action="Signin" style="color:white;cursor:pointer;" class="login100-form-btn">
+                Login
+            </a>
+        </div>
+
+        <div class="container-login100-form-btn m-t-32">
+            <button type="submit" class="login100-form-btn">
+                Register
+            </button>
+        </div>
+    </div>
+
+</form>

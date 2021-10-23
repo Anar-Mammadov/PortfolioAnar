@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Portfolio.WebUI.Model.Entity;
+using Portfolio.WebUI.Model.Entity.Memvership;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Portfolio.WebUI.Model.DataContexts
 {
-    public class PortfolioDbContext :DbContext
+    public class PortfolioDbContext :IdentityDbContext<PortUser,PortRole,int,PortUserClaim,PortUserRole,PortUserLogin,PortRoleClaim,PortUserToken>
     {
         public PortfolioDbContext(DbContextOptions options)
             :base(options)

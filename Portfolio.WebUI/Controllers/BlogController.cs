@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.WebUI.Model.DataContexts;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Portfolio.WebUI.Controllers
         {
             this.db = db;
         }
+        [AllowAnonymous]
+
         public IActionResult Index()
         {
             var data = db.BlogPosts.Where(c => c.DeleteByUserId == null).ToList();

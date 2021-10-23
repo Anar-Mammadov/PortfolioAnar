@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.WebUI.Model.DataContexts;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Portfolio.WebUI.Controllers
 {
+    [AllowAnonymous]
+
     public class ProjectController : Controller
     {
         readonly PortfolioDbContext db;
